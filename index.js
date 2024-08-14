@@ -8,6 +8,17 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  const trimmedObj = {}
+  
+  for (const key in obj) {
+    if (typeof obj[key] === 'string') {
+      trimmedObj[key] = obj[key].trim()
+    } else {
+      trimmedObj[key] = obj[key]
+    }
+  }
+  
+  return trimmedObj
 }
 
 /**
@@ -20,6 +31,13 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  for (let key in obj) {
+    if (typeof obj[key] === 'string') {
+      obj[key] = obj[key].trim()
+    }
+  }
+  
+  return obj
 }
 
 /**
@@ -32,6 +50,7 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  return Math.max(...integers.map(obj => obj.integer));
 }
 
 class Counter {
